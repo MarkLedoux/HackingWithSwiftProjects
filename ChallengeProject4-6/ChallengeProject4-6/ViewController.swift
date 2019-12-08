@@ -16,7 +16,7 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTextField))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForItem))
         loadList()
     }
     
@@ -35,9 +35,28 @@ class ViewController: UITableViewController {
            return cell
        }
     
-    @objc func addTextField() {
+    @objc func promptForItem() {
         let ac = UIAlertController(title: "Add to List", message: nil, preferredStyle: .alert)
         ac.addTextField()
+        
+        let submitAction = UIAlertAction(title: "Submit", style: .default) {
+            [weak self, weak ac] action in
+            guard let answer = ac?.textFields?[0].text else { return }
+            self?.submit(answer)
+        }
+        ac.addAction(submitAction)
+        present(ac, animated: true)
+        
+    }
+    
+    func submit(_ answer: String) {
+        _ = answer.lowercased()
+        shoppingList.insert(answer, at: 0)
+        
+        let indexPath = IndexPath(row: 0, section: 0)
+        tableView.insertRows(at: [indexPath], with: .automatic)
+        
+        return
     }
 
 

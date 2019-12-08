@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="enF-JQ-aeD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AdT-gM-Fh8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -38,9 +38,7 @@
                             <outlet property="delegate" destination="enF-JQ-aeD" id="jH0-sT-NWO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="tpr-Qo-0q9">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lC5-lH-Xmi"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="tpr-Qo-0q9"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhM-by-HNl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

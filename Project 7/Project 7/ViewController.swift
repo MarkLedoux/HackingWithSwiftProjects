@@ -10,10 +10,14 @@ import UIKit
 
 class ViewController: UITableViewController {
     var petitions = [Petition]()
+    var storedPetition = [Petition]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showInfo))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(filterPetition))
         
         let urlString: String
             
@@ -65,6 +69,32 @@ class ViewController: UITableViewController {
         let vc = DetailViewController()
         vc.detailItem = petitions[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func showInfo() {
+         let ac = UIAlertController(title: "Info", message: "The data shown in this application comes from the We The People API of the Whitehouse.", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK", style: .default)
+        
+        ac.addAction(action)
+        present(ac, animated: true)
+    }
+    
+    @objc func filterPetition() {
+        let ac = UIAlertController(title: "Enter filtering word", message: nil, preferredStyle: .alert)
+        ac.addTextField()
+        
+        let submitAction = UIAlertAction(title: "Submit", style: .default) {
+            [weak self, weak ac] action in
+            guard let answer = ac?.textFields?[0].text else { return }
+            self?.submit(answer)
+        }
+        ac.addAction(submitAction)
+        present(ac, animated: true)
+    }
+    
+    func submit(_ answer: String) {
+        let lowerAnswer = answer.lowercased()
     }
 
 

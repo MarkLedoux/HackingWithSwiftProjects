@@ -133,6 +133,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         loadLevel()
+        
+        for button in letterButtons {
+            button.layer.borderWidth = 0.5
+            button.layer.borderColor = UIColor.lightGray.cgColor
+        }
     }
     
     @objc func letterTapped(_ sender: UIButton) {
@@ -159,12 +164,16 @@ class ViewController: UIViewController {
             currentAnswer.text = ""
             score += 1
             
-            if score % 7 == 0 {
+            if score >= 5 {
                 let ac = UIAlertController(title: "Well done!", message: "Are you ready for the next level?", preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "Let's go!", style: .default, handler: levelUp))
                 present(ac, animated: true)
             }
             
+        } else {
+            let ac = UIAlertController(title: "Too bad, wrong answer!", message: "Try again", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Let's go!", style: .default, handler: pointLoss))
+            present(ac, animated: true)
         }
         
     }
@@ -190,6 +199,19 @@ class ViewController: UIViewController {
         for button in letterButtons {
             button.isHidden = false
         }
+    }
+    
+    func pointLoss(action: UIAlertAction) {
+        
+        score -= 1
+        currentAnswer.text = ""
+               
+        for button in letterButtons {
+            button.isHidden = false
+        }
+        
+        activatedButton.removeAll()
+        
     }
     
     func loadLevel() {

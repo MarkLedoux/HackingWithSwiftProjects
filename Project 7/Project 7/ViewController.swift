@@ -17,7 +17,6 @@ class ViewController: UITableViewController {
         // Do any additional setup after loading the view.
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showInfo))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(filterPetition))
         
         let urlString: String
             
@@ -78,23 +77,6 @@ class ViewController: UITableViewController {
         
         ac.addAction(action)
         present(ac, animated: true)
-    }
-    
-    @objc func filterPetition() {
-        let ac = UIAlertController(title: "Enter filtering word", message: nil, preferredStyle: .alert)
-        ac.addTextField()
-        
-        let submitAction = UIAlertAction(title: "Submit", style: .default) {
-            [weak self, weak ac] action in
-            guard let answer = ac?.textFields?[0].text else { return }
-            self?.submit(answer)
-        }
-        ac.addAction(submitAction)
-        present(ac, animated: true)
-    }
-    
-    func submit(_ answer: String) {
-        let lowerAnswer = answer.lowercased()
     }
 
 

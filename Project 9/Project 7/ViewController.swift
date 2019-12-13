@@ -103,7 +103,5 @@ class ViewController: UITableViewController {
     func submit(_ answer: String) {
         _ = answer.lowercased()
     }
-
-
 }
 

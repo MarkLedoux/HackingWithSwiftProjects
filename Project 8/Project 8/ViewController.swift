@@ -132,7 +132,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        loadLevel()
+        performSelector(inBackground: #selector(loadLevel), with: nil)
         
         for button in letterButtons {
             button.layer.borderWidth = 0.5
@@ -194,7 +194,7 @@ class ViewController: UIViewController {
         level += 1
         
         solutions.removeAll(keepingCapacity: true)
-        loadLevel()
+        performSelector(inBackground: #selector(loadLevel), with: nil)
         
         for button in letterButtons {
             button.isHidden = false
@@ -214,7 +214,7 @@ class ViewController: UIViewController {
         
     }
     
-    func loadLevel() {
+   @objc func loadLevel() {
         var clueString = ""
         var solutionString = ""
         var letterBits = [String]()

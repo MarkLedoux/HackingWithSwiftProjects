@@ -57,6 +57,13 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         if let jpegData = image.jpegData(compressionQuality: 0.8) {
             try? jpegData.write(to: imagePath)
         }
+        
+        let ac = UIAlertController(title: "Delete or Rename person?", message: nil, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Rename", style: .default) { [weak self, weak ac] _ in
+            
+            self?.collectionView
+        })
+        
         let person = Person(name: "Unknown", image: imageName)
         people.append(person)
         collectionView.reloadData()

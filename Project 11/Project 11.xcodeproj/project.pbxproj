@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E75220323B11FB50027A456 /* FireParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6E75220223B11FB50027A456 /* FireParticles.sks */; };
 		6EB54C6623AD23860071586B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB54C6523AD23860071586B /* AppDelegate.swift */; };
 		6EB54C6823AD23860071586B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6EB54C6723AD23860071586B /* GameScene.sks */; };
 		6EB54C6C23AD23860071586B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB54C6B23AD23860071586B /* GameScene.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E75220223B11FB50027A456 /* FireParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticles.sks; sourceTree = "<group>"; };
 		6EB54C6223AD23860071586B /* Project 11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 11.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB54C6523AD23860071586B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EB54C6723AD23860071586B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		6EB54C6423AD23860071586B /* Project 11 */ = {
 			isa = PBXGroup;
 			children = (
+				6E75220223B11FB50027A456 /* FireParticles.sks */,
 				6EB54C6523AD23860071586B /* AppDelegate.swift */,
 				6EB54C6723AD23860071586B /* GameScene.sks */,
 				6EB54C6B23AD23860071586B /* GameScene.swift */,
@@ -130,6 +133,7 @@
 			files = (
 				6EB54C7123AD23860071586B /* Main.storyboard in Resources */,
 				6EB54C6823AD23860071586B /* GameScene.sks in Resources */,
+				6E75220323B11FB50027A456 /* FireParticles.sks in Resources */,
 				6EB54C7323AD23890071586B /* Assets.xcassets in Resources */,
 				6EB54C7623AD23890071586B /* LaunchScreen.storyboard in Resources */,
 			);

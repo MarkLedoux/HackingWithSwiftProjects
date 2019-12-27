@@ -29,6 +29,14 @@ class ViewController: UITableViewController {
         }
         
         startGame()
+        
+        let defaults = UserDefaults.standard
+        
+        if let savedEntries = defaults.object(forKey: "usedWords") as? Data {
+            if let decodedEntries  = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedEntries) as? [String] {
+                usedWords = decodedEntries
+            }
+        }
     }
     
     func startGame() {
@@ -55,6 +63,7 @@ class ViewController: UITableViewController {
             [weak self, weak ac] action in
             guard let answer = ac?.textFields?[0].text else { return }
             self?.submit(answer)
+            self?.save()
         }
         ac.addAction(submitAction)
         present(ac, animated: true)
@@ -70,6 +79,7 @@ class ViewController: UITableViewController {
             if isOriginal(word: lowerAnswer) {
                 if isReal(word: lowerAnswer) {
                     usedWords.insert(answer, at: 0)
+                    save()
                     
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.insertRows(at: [indexPath], with: .automatic)
@@ -115,6 +125,13 @@ class ViewController: UITableViewController {
         let range = NSRange(location: 0, length: word.utf16.count)
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
         return misspelledRange.location == NSNotFound
+    }
+    
+    func save() {
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: usedWords, requiringSecureCoding: false) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "usedWords")
+        }
     }
 
 }

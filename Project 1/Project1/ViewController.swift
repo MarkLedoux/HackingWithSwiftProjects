@@ -20,6 +20,14 @@ class ViewController: UITableViewController {
         performSelector(inBackground: #selector(loadImage), with: nil)
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+        
+        let defaults = UserDefaults.standard
+        
+        if let loadedPicture = defaults.object(forKey: "pictures") as? Data {
+            if let decodedPicture = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(loadedPicture) as? [String] {
+                pictures = decodedPicture
+            }
+        }
     }
     
     @objc func loadImage() {
@@ -52,6 +60,7 @@ class ViewController: UITableViewController {
             vc.selectedImage = pictures[indexPath.row]
             navigationController?.pushViewController(vc, animated: true)
         }
+        save()
     }
 
     @objc func shareTapped() {
@@ -61,6 +70,13 @@ class ViewController: UITableViewController {
               vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
               present(vc, animated: true)
           }
+    
+    func save() {
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: pictures, requiringSecureCoding: false) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "pictures")
+        }
+    }
 
 }
 

@@ -35,6 +35,14 @@ class ViewController: UIViewController {
         askQuestion()
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+        
+        let defaults = UserDefaults.standard
+        
+        if let savedScore = defaults.object(forKey: "score") as? Data {
+            if let decodedScore = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedScore) as? Int {
+                score = decodedScore
+            }
+        }
     }
 
     func askQuestion(action: UIAlertAction! = nil) {
@@ -68,6 +76,7 @@ class ViewController: UIViewController {
 
         if questions <= 9 {
             let ac = UIAlertController(title: title, message: "Your score is \(score).", preferredStyle: .alert)
+            save()
             ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
             present(ac, animated: true)
         } else {
@@ -124,6 +133,13 @@ class ViewController: UIViewController {
         let vc = UIActivityViewController(activityItems: [score], applicationActivities: [])
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(vc, animated: true)
+    }
+    
+    func save() {
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: score, requiringSecureCoding: false) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "score")
+        }
     }
     
 }

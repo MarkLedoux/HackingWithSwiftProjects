@@ -10,24 +10,23 @@ import UIKit
 
 class ViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var pictures = [String]()
-    var people = [Person]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        title = "Image Viewer"
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addImage))
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        people.count
+        pictures.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
-        let person = people[indexPath.row]
-        cell.textLabel?.text = person.name
+        cell.textLabel?.text = pictures.sorted()[indexPath.row]
         return cell
     }
     
@@ -84,8 +83,7 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
             try? jpegData.write(to: imagePath)
         }
         
-        let person = Person(name: "Unknow", image: imageName)
-        people.append(person)
+        pictures.append(imageName)
         tableView.reloadData()
         
         dismiss(animated: true)

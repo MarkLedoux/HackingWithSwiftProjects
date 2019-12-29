@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var pictures = [String]()
+    var imagePicked = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()

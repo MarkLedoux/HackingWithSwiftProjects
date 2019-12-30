@@ -14,6 +14,7 @@
 		6E850CCF23B6556B005D4996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E850CCE23B6556B005D4996 /* Assets.xcassets */; };
 		6E850CD223B6556B005D4996 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E850CD023B6556B005D4996 /* LaunchScreen.storyboard */; };
 		6E850CDC23B65D8B005D4996 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E850CDB23B65D8B005D4996 /* DetailViewController.swift */; };
+		6E850D0623B93465005D4996 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E850D0523B93465005D4996 /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6E850CD123B6556B005D4996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E850CD323B6556B005D4996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E850CDB23B65D8B005D4996 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		6E850D0523B93465005D4996 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				6E850CC523B6556A005D4996 /* AppDelegate.swift */,
 				6E850CC723B6556A005D4996 /* SceneDelegate.swift */,
 				6E850CC923B6556A005D4996 /* ViewController.swift */,
+				6E850D0523B93465005D4996 /* Image.swift */,
 				6E850CCB23B6556A005D4996 /* Main.storyboard */,
 				6E850CDB23B65D8B005D4996 /* DetailViewController.swift */,
 				6E850CCE23B6556B005D4996 /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 				6E850CC623B6556A005D4996 /* AppDelegate.swift in Sources */,
 				6E850CC823B6556A005D4996 /* SceneDelegate.swift in Sources */,
 				6E850CDC23B65D8B005D4996 /* DetailViewController.swift in Sources */,
+				6E850D0623B93465005D4996 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

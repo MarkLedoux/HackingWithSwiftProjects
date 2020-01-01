@@ -11,7 +11,10 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var intensity: UISlider!
+    @IBOutlet var changeFilterName: UIButton!
+    
     var currentImage: UIImage!
+    
     
     var context: CIContext!
     var currentFilter: CIFilter!
@@ -45,7 +48,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(ac, animated: true)
     }
     @IBAction func save(_ sender: UIButton) {
-        guard let image = imageView.image else { return}
+        guard let image = imageView.image else {
+            let error = UIAlertController(title: "No image found", message: nil, preferredStyle: .alert)
+            error.addAction(UIAlertAction(title: "OK", style: .default))
+            present(error, animated: true)
+            return
+        }
         
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithErrror:contextInfo:)), nil)
     }

@@ -17,6 +17,8 @@
 		6EECC43923BCF9B90015D1E6 /* whack.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6EECC43723BCF9B90015D1E6 /* whack.caf */; };
 		6EECC43A23BCF9B90015D1E6 /* whackBad.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6EECC43823BCF9B90015D1E6 /* whackBad.caf */; };
 		6EECC43C23BD03C50015D1E6 /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EECC43B23BD03C50015D1E6 /* WhackSlot.swift */; };
+		6EECC43F23BE09EC0015D1E6 /* SmokeParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6EECC43D23BE09EC0015D1E6 /* SmokeParticles.sks */; };
+		6EECC44023BE09EC0015D1E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EECC43E23BE09EC0015D1E6 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		6EECC43723BCF9B90015D1E6 /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
 		6EECC43823BCF9B90015D1E6 /* whackBad.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whackBad.caf; sourceTree = "<group>"; };
 		6EECC43B23BD03C50015D1E6 /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
+		6EECC43D23BE09EC0015D1E6 /* SmokeParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SmokeParticles.sks; sourceTree = "<group>"; };
+		6EECC43E23BE09EC0015D1E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,8 @@
 		6EECC41323BCF8070015D1E6 = {
 			isa = PBXGroup;
 			children = (
+				6EECC43D23BE09EC0015D1E6 /* SmokeParticles.sks */,
+				6EECC43E23BE09EC0015D1E6 /* Assets.xcassets */,
 				6EECC41E23BCF8070015D1E6 /* Project 14 */,
 				6EECC41D23BCF8070015D1E6 /* Products */,
 			);
@@ -141,7 +147,9 @@
 				6EECC43923BCF9B90015D1E6 /* whack.caf in Resources */,
 				6EECC42223BCF8070015D1E6 /* GameScene.sks in Resources */,
 				6EECC42D23BCF80A0015D1E6 /* Assets.xcassets in Resources */,
+				6EECC43F23BE09EC0015D1E6 /* SmokeParticles.sks in Resources */,
 				6EECC43023BCF80A0015D1E6 /* LaunchScreen.storyboard in Resources */,
+				6EECC44023BE09EC0015D1E6 /* Assets.xcassets in Resources */,
 				6EECC43A23BCF9B90015D1E6 /* whackBad.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

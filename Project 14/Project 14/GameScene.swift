@@ -58,6 +58,7 @@ class GameScene: SKScene {
             
             whackSlot.hit()
             
+            
             if node.name == "charFriend" {
                 //they shouldn't have whacked this penguin
                 score -= 5
@@ -93,6 +94,7 @@ class GameScene: SKScene {
             gameOver.position = CGPoint(x: 512, y: 384)
             gameOver.zPosition = 1
             addChild(gameOver)
+            gameScore.text = "Final score: \(score)"
             return
         }
         

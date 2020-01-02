@@ -49,7 +49,7 @@ class WhackSlot: SKNode {
             charNode.name = "charFriend"
         } else {
             charNode.texture = SKTexture(imageNamed: "penguinEvil")
-            charNode.name = "charEnemys"
+            charNode.name = "charEnemy"
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + (hideTime * 3.5)) { [weak self] in
@@ -74,5 +74,10 @@ class WhackSlot: SKNode {
         }
         let sequence = SKAction.sequence([delay,hide, notVisible])
         charNode.run(sequence)
+        
+        if let smokeEffect = SKEmitterNode(fileNamed: "SmokeParticles") {
+            smokeEffect.position = charNode.position
+            addChild(smokeEffect)
+        }
     }
 }

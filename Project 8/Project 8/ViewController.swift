@@ -146,7 +146,7 @@ class ViewController: UIViewController {
         
         currentAnswer.text = currentAnswer.text?.appending(buttonTitle)
         activatedButton.append(sender)
-        sender.isHidden = true
+        sender.alpha = 0.2
         
     }
     

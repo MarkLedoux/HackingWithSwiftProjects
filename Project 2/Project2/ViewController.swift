@@ -57,6 +57,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonTapped(_ sender: UIButton) {
+        animateButton(sender)
         var title: String
         if sender.tag == correctAnswer {
             title = "Correct"
@@ -140,6 +141,15 @@ class ViewController: UIViewController {
             let defaults = UserDefaults.standard
             defaults.set(savedData, forKey: "score")
         }
+    }
+    
+    func animateButton(_ sender: UIButton) {
+        UIButton.animate(withDuration: 0.2, animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.975, y: 0.96)},
+                         completion: { _ in
+                            UIButton.animate(withDuration: 0.2, animations: {
+                                sender.transform = CGAffineTransform.identity})
+        })
     }
     
 }

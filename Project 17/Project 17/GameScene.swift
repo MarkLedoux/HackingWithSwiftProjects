@@ -18,6 +18,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var gameTimer: Timer?
     var isGameOver = false
     
+    var enemyCount = 0
+    
     var score = 0 {
         didSet{
             scoreLabel.text = "Score: \(score)"
@@ -49,7 +51,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = .zero
         physicsWorld.contactDelegate = self
         
-        gameTimer  = Timer.scheduledTimer(timeInterval: 0.35, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+        gameTimer  = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -89,6 +91,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     @objc func createEnemy() {
         guard let enemy = possibleEnemies.randomElement() else { return }
         
+        enemyCount += 1
+        
         let sprite = SKSpriteNode(imageNamed: enemy)
         sprite.position = CGPoint(x: 1200, y: Int.random(in: 50...736))
         addChild(sprite)
@@ -99,5 +103,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         sprite.physicsBody?.angularVelocity = 5
         sprite.physicsBody?.linearDamping = 0
         sprite.physicsBody?.angularDamping = 0
+        if isGameOver == true {
+            sprite.removeFromParent()
+        }
     }
 }

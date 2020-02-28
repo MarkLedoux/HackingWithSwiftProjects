@@ -12,6 +12,7 @@ class GameScene: SKScene {
     var gameTimer: Timer?
     var fireworks = [SKNode]()
     var scoreLabel: SKLabelNode!
+    var launchCountLabel: SKLabelNode!
     
     let leftEdge = -22
     let bottomEdge = -22
@@ -20,6 +21,12 @@ class GameScene: SKScene {
     var score = 0 {
         didSet {
             scoreLabel.text = "Score: \(score)"
+        }
+    }
+    
+    var launchCount = 20 {
+        didSet {
+            launchCountLabel.text = "Launch Count: \(launchCount)"
         }
     }
     
@@ -36,6 +43,12 @@ class GameScene: SKScene {
         scoreLabel.position = CGPoint(x: 16, y: 16)
         scoreLabel.horizontalAlignmentMode  = .left
         addChild(scoreLabel)
+        
+        launchCountLabel = SKLabelNode(fontNamed: "Chalduster")
+        launchCountLabel.fontSize = 16
+        launchCountLabel.position = CGPoint(x: 900, y: 16)
+        scoreLabel.horizontalAlignmentMode = .left
+        addChild(launchCountLabel)
         
         score = 0
     }
@@ -109,6 +122,11 @@ class GameScene: SKScene {
             
         default:
             break
+        }
+        launchCount -= 1
+        if launchCount <= 0 {
+            fireworks.removeAll()
+            gameTimer?.invalidate()
         }
     }
     

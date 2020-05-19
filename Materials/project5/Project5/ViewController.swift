@@ -48,7 +48,7 @@ class ViewController: UITableViewController {
 		let ac = UIAlertController(title: "Enter answer", message: nil, preferredStyle: .alert)
 		ac.addTextField()
 
-		let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned self, ac] action in
+		let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned self, ac] _ in
 			let answer = ac.textFields![0]
 			self.submit(answer: answer.text!)
 		}
@@ -78,7 +78,7 @@ class ViewController: UITableViewController {
 
 	func isReal(word: String) -> Bool {
 		let checker = UITextChecker()
-		let range = NSMakeRange(0, word.utf16.count)
+		let range = NSRange(location: 0, length: word.utf16.count)
 		let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
 
 		return misspelledRange.location == NSNotFound

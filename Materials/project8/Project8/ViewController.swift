@@ -23,7 +23,7 @@ class ViewController: UIViewController {
 			scoreLabel.text = "Score: \(score)"
 		}
 	}
-	
+
 	var level = 1
 
 	override func viewDidLoad() {
@@ -124,4 +124,3 @@ class ViewController: UIViewController {
 	}
 
 }
-

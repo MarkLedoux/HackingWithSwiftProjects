@@ -49,7 +49,7 @@ class ViewController: UIViewController {
 			let reason = "Identify yourself!"
 
 			context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
-				[unowned self] (success, authenticationError) in
+				[unowned self] (success, _) in
 
 				DispatchQueue.main.async {
 					if success {
@@ -86,4 +86,3 @@ class ViewController: UIViewController {
 		}
 	}
 }
-

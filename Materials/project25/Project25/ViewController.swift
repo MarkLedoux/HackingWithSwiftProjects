@@ -50,7 +50,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
 		present(picker, animated: true)
 	}
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
 		guard let image = info[.editedImage] as? UIImage else { return }
 
 		dismiss(animated: true)
@@ -149,4 +149,3 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
 		}
 	}
 }
-

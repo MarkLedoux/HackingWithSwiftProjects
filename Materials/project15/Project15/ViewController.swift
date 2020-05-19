@@ -49,7 +49,7 @@ class ViewController: UIViewController {
 			default:
 				break
 			}
-		}) { [unowned self] (finished: Bool) in
+		}) { [unowned self] (_: Bool) in
 			self.tap.isHidden = false
 		}
 
@@ -60,4 +60,3 @@ class ViewController: UIViewController {
 		}
 	}
 }
-

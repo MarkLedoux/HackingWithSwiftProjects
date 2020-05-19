@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 extension Author {
 
     @nonobjc public class func createFetchRequest() -> NSFetchRequest<Author> {

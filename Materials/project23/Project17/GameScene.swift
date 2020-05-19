@@ -164,7 +164,7 @@ class GameScene: SKScene {
 				node.physicsBody?.isDynamic = false
 
 				// 4
-				let scaleOut = SKAction.scale(to: 0.001, duration:0.2)
+				let scaleOut = SKAction.scale(to: 0.001, duration: 0.2)
 				let fadeOut = SKAction.fadeOut(withDuration: 0.2)
 				let group = SKAction.group([scaleOut, fadeOut])
 
@@ -190,7 +190,7 @@ class GameScene: SKScene {
 				node.name = ""
 				node.parent?.physicsBody?.isDynamic = false
 
-				let scaleOut = SKAction.scale(to: 0.001, duration:0.2)
+				let scaleOut = SKAction.scale(to: 0.001, duration: 0.2)
 				let fadeOut = SKAction.fadeOut(withDuration: 0.2)
 				let group = SKAction.group([scaleOut, fadeOut])
 
@@ -284,7 +284,7 @@ class GameScene: SKScene {
 			}
 
 			// 4
-			let path = Bundle.main.path(forResource: "sliceBombFuse.caf", ofType:nil)!
+			let path = Bundle.main.path(forResource: "sliceBombFuse.caf", ofType: nil)!
 			let url = URL(fileURLWithPath: path)
 			let sound = try! AVAudioPlayer(contentsOf: url)
 			bombSoundEffect = sound
@@ -439,7 +439,6 @@ class GameScene: SKScene {
 			DispatchQueue.main.asyncAfter(deadline: .now() + (chainDelay / 10.0 * 4)) { [unowned self] in self.createEnemy() }
 		}
 
-
 		sequencePosition += 1
 		nextSequenceQueued = false
 	}
@@ -464,7 +463,7 @@ class GameScene: SKScene {
 
 		life.xScale = 1.3
 		life.yScale = 1.3
-		life.run(SKAction.scale(to: 1, duration:0.1))
+		life.run(SKAction.scale(to: 1, duration: 0.1))
 	}
 
 	func endGame(triggeredByBomb: Bool) {

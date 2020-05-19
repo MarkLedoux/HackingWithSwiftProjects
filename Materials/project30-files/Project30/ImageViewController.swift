@@ -17,7 +17,7 @@ class ImageViewController: UIViewController {
 
 	override func loadView() {
 		super.loadView()
-		
+
 		view.backgroundColor = UIColor.black
 
 		// create an image view that fills the screen
@@ -35,7 +35,7 @@ class ImageViewController: UIViewController {
 		imageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
 
 		// schedule an animation that does something vaguely interesting
-		animTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { timer in
+		animTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
 			// do something exciting with our image
 			self.imageView.transform = CGAffineTransform.identity
 
@@ -78,7 +78,7 @@ class ImageViewController: UIViewController {
 		var currentVal = defaults.integer(forKey: image)
 		currentVal += 1
 
-		defaults.set(currentVal, forKey:image)
+		defaults.set(currentVal, forKey: image)
 
 		// tell the parent view controller that it should refresh its table counters when we go back
 		owner.dirty = true

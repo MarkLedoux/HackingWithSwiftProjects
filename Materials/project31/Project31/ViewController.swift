@@ -128,4 +128,3 @@ class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegat
         }
     }
 }
-

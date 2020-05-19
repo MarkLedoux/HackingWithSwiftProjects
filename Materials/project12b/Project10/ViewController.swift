@@ -58,7 +58,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
 		present(picker, animated: true)
 	}
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
 		var newImage: UIImage
 
 		if let possibleImage = info[.editedImage] as? UIImage {
@@ -116,4 +116,3 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         }
 	}
 }
-

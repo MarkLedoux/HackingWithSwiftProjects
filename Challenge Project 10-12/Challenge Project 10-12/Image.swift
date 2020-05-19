@@ -11,7 +11,7 @@ import UIKit
 class Image: NSObject {
     var filename: String
     var caption: String
-    
+
     init(filename: String, caption: String) {
         self.filename = filename
         self.caption = caption

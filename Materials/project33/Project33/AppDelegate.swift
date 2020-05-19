@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 	var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+		UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { _, error in
 			if let error = error {
 				print("D'oh: \(error.localizedDescription)")
 			} else {
@@ -53,4 +53,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 		completionHandler([.alert, .sound, .badge])
 	}
 }
-

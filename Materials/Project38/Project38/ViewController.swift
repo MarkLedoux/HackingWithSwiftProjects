@@ -21,7 +21,7 @@ class ViewController: UITableViewController, NSFetchedResultsControllerDelegate 
 
 		container = NSPersistentContainer(name: "Project38")
 
-		container.loadPersistentStores { storeDescription, error in
+		container.loadPersistentStores { _, error in
 			self.container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
 
 			if let error = error {
@@ -222,4 +222,3 @@ class ViewController: UITableViewController, NSFetchedResultsControllerDelegate 
 		}
 	}
 }
-

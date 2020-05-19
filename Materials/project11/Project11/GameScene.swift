@@ -42,7 +42,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		makeSlot(at: CGPoint(x: 128, y: 0), isGood: true)
 		makeSlot(at: CGPoint(x: 384, y: 0), isGood: false)
 		makeSlot(at: CGPoint(x: 640, y: 0), isGood: true)
-		makeSlot(at: CGPoint(x: 896, y:0), isGood: false)
+		makeSlot(at: CGPoint(x: 896, y: 0), isGood: false)
 
 		makeBouncer(at: CGPoint(x: 0, y: 0))
 		makeBouncer(at: CGPoint(x: 256, y: 0))

@@ -48,7 +48,7 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
 		do {
             try recordingSession.setCategory(.playAndRecord, mode: .default)
 			try recordingSession.setActive(true)
-			recordingSession.requestRecordPermission() { [unowned self] allowed in
+			recordingSession.requestRecordPermission { [unowned self] allowed in
 				DispatchQueue.main.async {
 					if allowed {
 						self.loadRecordingUI()

@@ -28,7 +28,6 @@ arc4.nextInt(upperBound: 20)
 let mersenne = GKMersenneTwisterRandomSource()
 mersenne.nextInt(upperBound: 20)
 
-
 let d6 = GKRandomDistribution.d6()
 d6.nextInt()
 
@@ -42,11 +41,9 @@ crazy.nextInt()
 //let distribution = GKRandomDistribution(lowestValue: 10, highestValue: 20)
 //print(distribution.nextInt(upperBound: 9))
 
-
 let rand = GKMersenneTwisterRandomSource()
 let distribution = GKRandomDistribution(randomSource: rand, lowestValue: 10, highestValue: 20)
 print(distribution.nextInt())
-
 
 let shuffled = GKShuffledDistribution.d6()
 print(shuffled.nextInt())
@@ -55,8 +52,6 @@ print(shuffled.nextInt())
 print(shuffled.nextInt())
 print(shuffled.nextInt())
 print(shuffled.nextInt())
-
-
 
 extension Array {
 	mutating func shuffle() {
@@ -67,8 +62,6 @@ extension Array {
 	}
 }
 
-
-
 let lotteryBalls = [Int](1...49)
 let shuffledBalls = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: lotteryBalls)
 print(shuffledBalls[0])
@@ -77,7 +70,6 @@ print(shuffledBalls[2])
 print(shuffledBalls[3])
 print(shuffledBalls[4])
 print(shuffledBalls[5])
-
 
 let fixedLotteryBalls = [Int](1...49)
 let fixedShuffledBalls = GKMersenneTwisterRandomSource(seed: 1001).arrayByShufflingObjects(in: fixedLotteryBalls)

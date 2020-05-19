@@ -12,7 +12,6 @@ var myInt = 0
 myInt.plusOne()
 myInt
 
-
 // THIS EXTENDS ONLY INT
 //extension Int {
 //	func squared() -> Int {
@@ -29,7 +28,6 @@ extension BinaryInteger {
 
 let i: Int = 8
 print(i.squared())
-
 
 var str = "  Hello  "
 str = str.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)

@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 extension Commit {
 
     @nonobjc public class func createFetchRequest() -> NSFetchRequest<Commit> {

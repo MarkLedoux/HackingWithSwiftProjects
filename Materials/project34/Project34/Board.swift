@@ -29,7 +29,7 @@ class Board: NSObject, GKGameModel {
 			slots.append(.none)
 		}
 
-		currentPlayer = Player.allPlayers[0]		
+		currentPlayer = Player.allPlayers[0]
 
 		super.init()
 	}

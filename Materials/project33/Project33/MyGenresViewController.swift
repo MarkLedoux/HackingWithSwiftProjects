@@ -79,7 +79,7 @@ class MyGenresViewController: UITableViewController {
 			if error == nil {
 				if let subscriptions = subscriptions {
 					for subscription in subscriptions {
-						database.delete(withSubscriptionID: subscription.subscriptionID) { str, error in
+						database.delete(withSubscriptionID: subscription.subscriptionID) { _, error in
 							if error != nil {
 								// do your error handling here!
 								print(error!.localizedDescription)
@@ -88,7 +88,7 @@ class MyGenresViewController: UITableViewController {
 					}
 
 					for genre in self.myGenres {
-						let predicate = NSPredicate(format:"genre = %@", genre)
+						let predicate = NSPredicate(format: "genre = %@", genre)
 						let subscription = CKQuerySubscription(recordType: "Whistles", predicate: predicate, options: .firesOnRecordCreation)
 
                         let notification = CKSubscription.NotificationInfo()
@@ -97,7 +97,7 @@ class MyGenresViewController: UITableViewController {
 
 						subscription.notificationInfo = notification
 
-						database.save(subscription) { result, error in
+						database.save(subscription) { _, error in
 							if let error = error {
 								print(error.localizedDescription)
 							}

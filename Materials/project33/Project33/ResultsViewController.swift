@@ -106,7 +106,7 @@ class ResultsViewController: UITableViewController {
 		let ac = UIAlertController(title: "Suggest a song…", message: nil, preferredStyle: .alert)
 		ac.addTextField()
 
-		ac.addAction(UIAlertAction(title: "Submit", style: .default) { [unowned self, ac] action in
+		ac.addAction(UIAlertAction(title: "Submit", style: .default) { [unowned self, ac] _ in
 			if let textField = ac.textFields?[0] {
 				if textField.text!.count > 0 {
 					self.add(suggestion: textField.text!)
@@ -124,7 +124,7 @@ class ResultsViewController: UITableViewController {
 		whistleRecord["text"] = suggestion as CKRecordValue
 		whistleRecord["owningWhistle"] = reference as CKRecordValue
 
-		CKContainer.default().publicCloudDatabase.save(whistleRecord) { [unowned self] record, error in
+		CKContainer.default().publicCloudDatabase.save(whistleRecord) { [unowned self] _, error in
 			DispatchQueue.main.async {
 				if error == nil {
 					self.suggestions.append(suggestion)

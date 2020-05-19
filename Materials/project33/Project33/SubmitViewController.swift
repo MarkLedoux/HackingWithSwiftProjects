@@ -72,7 +72,7 @@ class SubmitViewController: UIViewController {
 		let whistleAsset = CKAsset(fileURL: audioURL)
 		whistleRecord["audio"] = whistleAsset
 
-		CKContainer.default().publicCloudDatabase.save(whistleRecord) { [unowned self] record, error in
+		CKContainer.default().publicCloudDatabase.save(whistleRecord) { [unowned self] _, error in
 			DispatchQueue.main.async {
 				if let error = error {
 					self.status.text = "Error: \(error.localizedDescription)"

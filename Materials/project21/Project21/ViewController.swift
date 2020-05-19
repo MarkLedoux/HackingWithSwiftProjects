@@ -11,7 +11,6 @@ import UserNotifications
 
 class ViewController: UIViewController, UNUserNotificationCenterDelegate {
 
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -22,7 +21,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
 	@objc func registerLocal() {
 		let center = UNUserNotificationCenter.current()
 
-		center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+		center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, _) in
 			if granted {
 				print("Yay!")
 			} else {
@@ -89,4 +88,3 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
 		completionHandler()
 	}
 }
-

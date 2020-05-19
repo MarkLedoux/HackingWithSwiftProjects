@@ -54,7 +54,6 @@ class SelectionViewController: UITableViewController {
         return items.count * 10
     }
 
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
 

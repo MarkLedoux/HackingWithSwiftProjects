@@ -10,10 +10,10 @@ import UIKit
 import WebKit
 
 class DetailViewController: UIViewController {
-    
+
     var webView: WKWebView!
     var detailItem: Petition?
-    
+
     override func loadView() {
         webView = WKWebView()
         view = webView
@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         guard let detailItem = detailItem else { return }
-        
+
         let html = """
         <html>
         <head>
@@ -35,8 +35,8 @@ class DetailViewController: UIViewController {
         </body>
         </html>
         """
-        
+
         webView.loadHTMLString(html, baseURL: nil)
     }
-    
+
 }

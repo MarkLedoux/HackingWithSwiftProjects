@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-        countries += ["estonia","france","germany","ireland","italy","monaco","nigeria","poland","russia","spain","uk","us"]
+        countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
 
         button1.layer.borderWidth = 1
         button2.layer.borderWidth = 1
@@ -76,11 +76,11 @@ class ViewController: UIViewController {
             present(ac, animated: true)
             score = 0
             correctAnswer = 0
-            questions = 0 
+            questions = 0
         }
     }
 
-  func setTitle(title:String, subtitle:String) -> UIView {
+  func setTitle(title: String, subtitle: String) -> UIView {
 
         let titleLabel = UILabel(frame: CGRect(x: 0, y: -2, width: 0, height: 0))
 
@@ -90,13 +90,12 @@ class ViewController: UIViewController {
         titleLabel.text = title
         titleLabel.sizeToFit()
 
-        let subtitleLabel = UILabel(frame: CGRect(x:0, y:18, width:0, height:0))
+        let subtitleLabel = UILabel(frame: CGRect(x: 0, y: 18, width: 0, height: 0))
         subtitleLabel.backgroundColor = .clear
         subtitleLabel.textColor = .black
         subtitleLabel.font = UIFont.systemFont(ofSize: 12)
         subtitleLabel.text = subtitle
         subtitleLabel.sizeToFit()
-
 
         let titleView = UIView(frame: CGRect(x: 0, y: 0, width: max(titleLabel.frame.size.width, subtitleLabel.frame.size.width), height: 30))
         titleView.addSubview(titleLabel)
@@ -114,7 +113,7 @@ class ViewController: UIViewController {
 
         return titleView
     }
-    
+
     override func didReceiveMemoryWarning() {
         super .didReceiveMemoryWarning()
         //Dispose of any resources that can be recreated 
@@ -125,6 +124,5 @@ class ViewController: UIViewController {
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(vc, animated: true)
     }
-    
-}
 
+}

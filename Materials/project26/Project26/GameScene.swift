@@ -73,7 +73,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 							node.physicsBody?.categoryBitMask = CollisionTypes.wall.rawValue
 							node.physicsBody?.isDynamic = false
 							addChild(node)
-						} else if letter == "v"  {
+						} else if letter == "v" {
 							// load vortex
 							let node = SKSpriteNode(imageNamed: "vortex")
 							node.name = "vortex"
@@ -86,7 +86,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 							node.physicsBody?.contactTestBitMask = CollisionTypes.player.rawValue
 							node.physicsBody?.collisionBitMask = 0
 							addChild(node)
-						} else if letter == "s"  {
+						} else if letter == "s" {
 							// load star
 							let node = SKSpriteNode(imageNamed: "star")
 							node.name = "star"
@@ -98,7 +98,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 							node.physicsBody?.collisionBitMask = 0
 							node.position = position
 							addChild(node)
-						} else if letter == "f"  {
+						} else if letter == "f" {
 							// load finish
 							let node = SKSpriteNode(imageNamed: "finish")
 							node.name = "finish"

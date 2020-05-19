@@ -67,7 +67,7 @@ class ViewController: UIViewController {
 		let size = min(button.frame.width, button.frame.height / 6)
 		let rect = CGRect(x: 0, y: 0, width: size, height: size)
 
-		if (placedChips[column].count < row + 1) {
+		if placedChips[column].count < row + 1 {
 			let newChip = UIView()
 			newChip.frame = rect
 			newChip.isUserInteractionEnabled = false
@@ -105,7 +105,7 @@ class ViewController: UIViewController {
 
 	func continueGame() {
 		// 1
-		var gameOverTitle: String? = nil
+		var gameOverTitle: String?
 
 		// 2
 		if board.isWin(for: board.currentPlayer) {
@@ -117,7 +117,7 @@ class ViewController: UIViewController {
 		// 3
 		if gameOverTitle != nil {
 			let alert = UIAlertController(title: gameOverTitle, message: nil, preferredStyle: .alert)
-			let alertAction = UIAlertAction(title: "Play Again", style: .default) { [unowned self] (action) in
+			let alertAction = UIAlertAction(title: "Play Again", style: .default) { [unowned self] (_) in
 				self.resetBoard()
 			}
 
@@ -146,7 +146,7 @@ class ViewController: UIViewController {
 
 		if let row = board.nextEmptySlot(in: column) {
 			board.add(chip: board.currentPlayer.chip, in: column)
-			addChip(inColumn: column, row:row, color: board.currentPlayer.color)
+			addChip(inColumn: column, row: row, color: board.currentPlayer.color)
 
 			continueGame()
 		}
@@ -174,4 +174,3 @@ class ViewController: UIViewController {
 		}
 	}
 }
-

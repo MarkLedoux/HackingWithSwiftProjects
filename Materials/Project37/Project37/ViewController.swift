@@ -32,7 +32,7 @@ class ViewController: UIViewController, WCSessionDelegate {
 
         playMusic()
 
-        if (WCSession.isSupported()) {
+        if WCSession.isSupported() {
             let session = WCSession.default
             session.delegate = self
             session.activate()
@@ -187,7 +187,7 @@ class ViewController: UIViewController, WCSessionDelegate {
         }
 
         // send a message to the watch if it's reachable
-        if (WCSession.default.isReachable) {
+        if WCSession.default.isReachable {
             // this is a meaningless message, but it's enough for our purposes
             let message = ["Message": "Hello"]
             WCSession.default.sendMessage(message, replyHandler: nil)
@@ -200,7 +200,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
 
     }
-    
+
     func sessionDidBecomeInactive(_ session: WCSession) {
 
     }
@@ -209,4 +209,3 @@ class ViewController: UIViewController, WCSessionDelegate {
 
     }
 }
-

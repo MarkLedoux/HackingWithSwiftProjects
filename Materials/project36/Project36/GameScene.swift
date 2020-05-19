@@ -192,7 +192,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		topRock.zPosition = -20
 		bottomRock.zPosition = -20
 
-
 		// 2
 		let rockCollision = SKSpriteNode(color: UIColor.red, size: CGSize(width: 32, height: frame.height))
 		rockCollision.physicsBody = SKPhysicsBody(rectangleOf: rockCollision.size)
@@ -202,7 +201,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		addChild(topRock)
 		addChild(bottomRock)
 		addChild(rockCollision)
-
 
 		// 3
 		let xPosition = frame.width + topRock.frame.width

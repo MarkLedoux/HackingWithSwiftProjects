@@ -27,7 +27,7 @@ class ViewController: UITableViewController {
 		let word = playData.filteredWords[indexPath.row]
 		cell.textLabel!.text = word
 		cell.detailTextLabel!.text = "\(playData.wordCounts.count(for: word))"
-		
+
 		return cell
 	}
 
@@ -46,4 +46,3 @@ class ViewController: UITableViewController {
 		present(ac, animated: true)
 	}
 }
-

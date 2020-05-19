@@ -12,7 +12,7 @@ import WebKit
 class DetailViewController: UIViewController {
     var webView: WKWebView!
     var detailItem: Country?
-    
+
     override func loadView() {
         webView = WKWebView()
         view = webView
@@ -20,9 +20,9 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         guard let detailItem = detailItem else { return }
-        
+
         let html = """
         <html>
         <head>

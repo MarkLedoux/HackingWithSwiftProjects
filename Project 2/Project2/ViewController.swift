@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-        countries += ["estonia","france","germany","ireland","italy","monaco","nigeria","poland","russia","spain","uk","us"]
+        countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
 
         button1.layer.borderWidth = 1
         button2.layer.borderWidth = 1
@@ -35,9 +35,9 @@ class ViewController: UIViewController {
         askQuestion()
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
-        
+
         let defaults = UserDefaults.standard
-        
+
         if let savedScore = defaults.object(forKey: "score") as? Data {
             if let decodedScore = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedScore) as? Int {
                 score = decodedScore
@@ -86,11 +86,11 @@ class ViewController: UIViewController {
             present(ac, animated: true)
             score = 0
             correctAnswer = 0
-            questions = 0 
+            questions = 0
         }
     }
 
-  func setTitle(title:String, subtitle:String) -> UIView {
+  func setTitle(title: String, subtitle: String) -> UIView {
 
         let titleLabel = UILabel(frame: CGRect(x: 0, y: -2, width: 0, height: 0))
 
@@ -100,13 +100,12 @@ class ViewController: UIViewController {
         titleLabel.text = title
         titleLabel.sizeToFit()
 
-        let subtitleLabel = UILabel(frame: CGRect(x:0, y:18, width:0, height:0))
+        let subtitleLabel = UILabel(frame: CGRect(x: 0, y: 18, width: 0, height: 0))
         subtitleLabel.backgroundColor = .clear
         subtitleLabel.textColor = .black
         subtitleLabel.font = UIFont.systemFont(ofSize: 12)
         subtitleLabel.text = subtitle
         subtitleLabel.sizeToFit()
-
 
         let titleView = UIView(frame: CGRect(x: 0, y: 0, width: max(titleLabel.frame.size.width, subtitleLabel.frame.size.width), height: 30))
         titleView.addSubview(titleLabel)
@@ -124,7 +123,7 @@ class ViewController: UIViewController {
 
         return titleView
     }
-    
+
     override func didReceiveMemoryWarning() {
         super .didReceiveMemoryWarning()
         //Dispose of any resources that can be recreated 
@@ -135,14 +134,14 @@ class ViewController: UIViewController {
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(vc, animated: true)
     }
-    
+
     func save() {
         if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: score, requiringSecureCoding: false) {
             let defaults = UserDefaults.standard
             defaults.set(savedData, forKey: "score")
         }
     }
-    
+
     func animateButton(_ sender: UIButton) {
         UIButton.animate(withDuration: 0.2, animations: {
             sender.transform = CGAffineTransform(scaleX: 0.975, y: 0.96)},
@@ -151,6 +150,5 @@ class ViewController: UIViewController {
                                 sender.transform = CGAffineTransform.identity})
         })
     }
-    
-}
 
+}

@@ -20,16 +20,16 @@ class ViewController: UITableViewController {
         performSelector(inBackground: #selector(loadImage), with: nil)
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
-        
+
         let defaults = UserDefaults.standard
-        
+
         if let loadedPicture = defaults.object(forKey: "pictures") as? Data {
             if let decodedPicture = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(loadedPicture) as? [String] {
                 pictures = decodedPicture
             }
         }
     }
-    
+
     @objc func loadImage() {
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
@@ -43,7 +43,6 @@ class ViewController: UITableViewController {
         }
         tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
     }
-    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pictures.count
@@ -67,11 +66,11 @@ class ViewController: UITableViewController {
     @objc func shareTapped() {
            let text = "Check out how awesome this app this!"
 
-        let vc = UIActivityViewController(activityItems: [text,title!], applicationActivities: [])
+        let vc = UIActivityViewController(activityItems: [text, title!], applicationActivities: [])
               vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
               present(vc, animated: true)
           }
-    
+
     func save() {
         if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: pictures, requiringSecureCoding: false) {
             let defaults = UserDefaults.standard
@@ -80,4 +79,3 @@ class ViewController: UITableViewController {
     }
 
 }
-

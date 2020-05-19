@@ -17,7 +17,7 @@ class ActionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
 
 		let notificationCenter = NotificationCenter.default
@@ -26,7 +26,7 @@ class ActionViewController: UIViewController {
 
 		if let inputItem = extensionContext!.inputItems.first as? NSExtensionItem {
 			if let itemProvider = inputItem.attachments?.first {
-				itemProvider.loadItem(forTypeIdentifier: kUTTypePropertyList as String) { [unowned self] (dict, error) in
+				itemProvider.loadItem(forTypeIdentifier: kUTTypePropertyList as String) { [unowned self] (dict, _) in
 					let itemDictionary = dict as! NSDictionary
 					let javaScriptValues = itemDictionary[NSExtensionJavaScriptPreprocessingResultsKey] as! NSDictionary
 

@@ -79,7 +79,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
 		decisionHandler(.cancel)
 	}
 
-	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
 		if keyPath == "estimatedProgress" {
 			progressView.progress = Float(webView.estimatedProgress)
 		}

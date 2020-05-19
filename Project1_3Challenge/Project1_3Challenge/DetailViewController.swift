@@ -14,7 +14,6 @@ class DetailViewController: UIViewController {
     var selectedPictureNumber = 0
     var totalPictures = 0
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +25,7 @@ class DetailViewController: UIViewController {
         if let imageToLoad = selectedImage {
             imageView.image = UIImage(named: imageToLoad)
         }
-    
+
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -12,7 +12,7 @@ import UIKit
 class ViewController: UITableViewController {
 	var whistles = [Whistle]()
     static var isDirty = true
-	
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -116,4 +116,3 @@ class ViewController: UITableViewController {
 		navigationController?.pushViewController(vc, animated: true)
 	}
 }
-
